@@ -1,3 +1,5 @@
+# Script para criação das tabelas
+
 CREATE TABLE doador (
     id_doador INT PRIMARY KEY,
     nome_fantasia VARCHAR(100),
