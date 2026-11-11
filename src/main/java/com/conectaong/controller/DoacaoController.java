@@ -49,4 +49,26 @@ public class DoacaoController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    @PatchMapping("/{id}/status")
+    public ResponseEntity<?> atualizarStatus(@PathVariable Integer id, @RequestParam String status) {
+        try {
+            return doacaoService.alterarStatus(id, status)
+                    .map(ResponseEntity::ok)
+                    .orElse(ResponseEntity.notFound().build());
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/doador/{idDoador}")
+    public ResponseEntity<List<Doacao>> buscarHistoricoPorDoador(@PathVariable Integer idDoador) {
+        return ResponseEntity.ok(doacaoService.listarPorDoador(idDoador));
+    }
+
+    @GetMapping("/entidade/{idEntidade}")
+    public ResponseEntity<List<Doacao>> buscarHistoricoPorEntidade(@PathVariable Integer idEntidade) {
+        return ResponseEntity.ok(doacaoService.listarPorEntidade(idEntidade));
+    }
+
 }
