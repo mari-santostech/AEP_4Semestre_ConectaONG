@@ -47,6 +47,7 @@ public class DoacaoService {
     private static final List<String> STATUS_PERMITIDOS = List.of(
             "Aguardando Aceite",
             "Preparando Doação",
+            "Aguardando Retirada",
             "Em Transporte",
             "Concluída",
             "Cancelada"
