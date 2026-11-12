@@ -43,3 +43,18 @@ O **ConectaONG** é uma solução tecnológica voltada para o gerenciamento e a 
 * **Linguagem Backend:** Java (Orientação a Objetos com Herança, Polimorfismo e Composição)
 * **Banco de Dados:** Banco de Dados Relacional (MySQL)
 * **Modelagem Técnica:** UML (Diagrama de Classes Astah) e Diagrama Entidade-Relacionamento (DER)
+
+## Pré-Requisitos e Execução
+
+* **JDK 21** instalado e configurado nas variáveis de ambiente (`JAVA_HOME`).
+* **MySQL Server** (versão 8.0 ou superior) ativo na porta padrão `3306`.
+* **Maven** (ou utilização do Maven Wrapper `./mvnw` incluso no projeto).
+* IDE Java de preferência (IntelliJ IDEA).
+
+### Configuração do DB
+1. Execute o script SQL localizado na pasta `/database` no seu servidor MySQL para criar o banco de dados e as tabelas.
+2. Abra o arquivo `src/main/resources/application.properties` e ajuste o usuário e a senha conforme a configuração do seu MySQL local:
+   ```properties
+   spring.datasource.url=jdbc:mysql://localhost:3306/conectaong
+   spring.datasource.username=seu_usuario
+   spring.datasource.password=sua_senha
