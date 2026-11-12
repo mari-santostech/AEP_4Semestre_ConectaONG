@@ -50,7 +50,7 @@ public class DoacaoController {
         return ResponseEntity.notFound().build();
     }
 
-    @PatchMapping("/{id}/status")
+    @PutMapping("/{id}/status")
     public ResponseEntity<?> atualizarStatus(@PathVariable Integer id, @RequestParam String status) {
         try {
             return doacaoService.alterarStatus(id, status)
